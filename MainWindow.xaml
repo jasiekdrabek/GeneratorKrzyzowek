@@ -1,12 +1,29 @@
-﻿<Window x:Class="GeneratorKrzyzowek2.MainWindow"
+﻿<Window x:Class="GeneratorKrzyzowek.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GeneratorKrzyzowek2"
+        xmlns:local="clr-namespace:GeneratorKrzyzowek"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="400">
     <Grid>
-        
+        <Button Content="Create new crossword" HorizontalAlignment="Left" Margin="100,260,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Button_Click"/>
+        <Label Content="Choose number of password in crossword:" HorizontalAlignment="Left" Margin="85,70,0,0" VerticalAlignment="Top" Width="239"/>
+        <ComboBox Name="CBI" Text="Random" HorizontalAlignment="Left" Margin="141,116,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Name="CBI3" Content="3" />
+            <ComboBoxItem Name="CBI4" Content="4" />
+            <ComboBoxItem Name="CBI5" Content="5"/>
+            <ComboBoxItem Name="CBI6" Content="6"/>
+            <ComboBoxItem Name="CBI7" Content="7"/>
+            <ComboBoxItem Name="CBI8" Content="8"/>
+            <ComboBoxItem Name="CBI9" Content="9"/>
+            <ComboBoxItem Name="CBI10" Content="10"/>
+            <ComboBoxItem Name="CBI11" Content="11"/>
+            <ComboBoxItem Name="CBI12" Content="12"/>
+            <ComboBoxItem Name="CBI13" Content="13"/>
+            <ComboBoxItem Name="CBI14" Content="14"/>
+            <ComboBoxItem Name="CBI15" Content="15"/>
+        </ComboBox>
+
     </Grid>
 </Window>

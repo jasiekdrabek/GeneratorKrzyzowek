@@ -1,0 +1,30 @@
+﻿<Window x:Class="GeneratorKrzyzowek.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeneratorKrzyzowek"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid Name="grid" Background="Black" >
+        <Button Content="Try enter password" HorizontalAlignment="Left" Margin="650,375,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_Try_Enter_Password"/>
+        <TextBox Name="TBToEnterPassword" HorizontalAlignment="Left" Height="33" Margin="650,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="CB" Text="" ItemsSource="{Binding CbItems}" SelectedItem="{Binding SelectedcbItem}" Margin="597,291,148.6,96" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ListBox Name="ListBoxWithClues"  Background="Black"  HorizontalAlignment="Left" Height="199" Margin="591,0,0,0" VerticalAlignment="Top" Width="201" RenderTransformOrigin="0.5,0.5">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.628"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.789"/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <Button Content="Change clue" HorizontalAlignment="Left" Margin="650,342,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Change_Clue"/>
+        <TextBox Name="ListBoxOfPasswordYouTriedEnter" TextWrapping="Wrap" IsReadOnly="True" Text="" HorizontalAlignment="Left" Height="63" Margin="597,214,0,0" VerticalAlignment="Top" Width="187"/>
+
+
+
+
+    </Grid>
+</Window>
