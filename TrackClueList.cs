@@ -11,20 +11,20 @@ namespace GeneratorKrzyzowek
         public List<int> Index;
         public List<bool> Check;
 
-        
         public int GetPasswordLenght(string str)
         {
-            int x = 3;
-            if (str == "Random")
+            var resoult = int.TryParse(str, out int x);
+            if (resoult)
             {
-                Random rand = new Random();
-                x = rand.Next(3, 16);
+                return x;
             }
             else
             {
-                int.TryParse(str, out x);
+                Random rand = new Random();
+                x = rand.Next(3, 16);
+                return x;
             }
-            return x;
+
         }
 
         public int NextIndex(int index, int listsize)
@@ -32,7 +32,6 @@ namespace GeneratorKrzyzowek
             index = (index + 1) % listsize;
             return index;
         }
-
     }
 }
 

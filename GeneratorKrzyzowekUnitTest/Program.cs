@@ -22,11 +22,17 @@ namespace GeneratorKrzyzowekUnitTest
             Assert.AreEqual(4, res);
             res = cos.GetPasswordLenght("5");
             Assert.AreEqual(5, res);
+            res = cos.GetPasswordLenght("156");
+            Assert.AreEqual(156, res);
+            res = cos.GetPasswordLenght("not number");
+            Assert.Greater(res, 2);
+            Assert.Less(res, 16);
+            res = cos.GetPasswordLenght(null);
+            Assert.Greater(res,2);
+            Assert.Less(res,16);
             res = cos.GetPasswordLenght("");
-            Assert.AreEqual(0, res);
-            res = cos.GetPasswordLenght("veohetgu");
-            Assert.AreEqual(0, res);
-
+            Assert.Greater(res,2);
+            Assert.Less(res,16);
 
         }
         [Test]

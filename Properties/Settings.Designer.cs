@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeneratorKrzyzowek2.Properties
+namespace GeneratorKrzyzowek.Properties
 {
 
 

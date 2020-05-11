@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneratorKrzyzowek"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="400">
+        Title="MainWindow" Height="700" Width="800">
     <Grid>
-        <Button Content="Create new crossword" HorizontalAlignment="Left" Margin="100,260,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Button_Click"/>
-        <Label Content="Choose number of password in crossword:" HorizontalAlignment="Left" Margin="85,70,0,0" VerticalAlignment="Top" Width="239"/>
-        <ComboBox Name="CBI" Text="Random" HorizontalAlignment="Left" Margin="141,116,0,0" VerticalAlignment="Top" Width="120">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="198*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label FontSize="32" Content="Across crossword" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,73,0,0" VerticalAlignment="Top" Height="46" Width="252"/>
+        <Label Content="Choose number of password in crossword:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="85,143,0,0" VerticalAlignment="Top" Width="239"/>
+        <ComboBox Name="CBI" Text="Random" HorizontalAlignment="Left" Margin="140,191,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.494,1.505">
             <ComboBoxItem Name="CBI3" Content="3" />
             <ComboBoxItem Name="CBI4" Content="4" />
             <ComboBoxItem Name="CBI5" Content="5"/>
@@ -24,6 +29,34 @@
             <ComboBoxItem Name="CBI14" Content="14"/>
             <ComboBoxItem Name="CBI15" Content="15"/>
         </ComboBox>
+        <Button Content="Create new crossword" HorizontalAlignment="Left" Margin="100,260,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Button_Click_Generate_Simple_Crossword"/>
+        <Button Content="Load crossword" HorizontalAlignment="Left" Margin="100,336,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_Load_Simple_Crossword" Height="26"/>
+        <Label FontSize="32" Content="Add/Delete password" HorizontalAlignment="Left" Margin="40,400,0,0" VerticalAlignment="Top" Width="322"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="40,470,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TBPassword" HorizontalAlignment="Left" Height="23" Margin="40,510,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Clue:" HorizontalAlignment="Left" Margin="40,550,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TBClue" HorizontalAlignment="Left" Height="23" Margin="40,590,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="40,640,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Add_Password"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="185,640,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Delete_Password"/>
 
+        <Label FontSize="32"  Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="86" Margin="72,50,0,0"  Content="Across and down " VerticalAlignment="Top" Width="252"/>
+        <Label FontSize="32"  Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="86" Margin="72,85,0,0"  Content="crossword" VerticalAlignment="Top" Width="252"/>
+        <Label Content="Choose grid size:" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="85,143,0,0" VerticalAlignment="Top" Width="239"/>
+        <ComboBox Name="CBII" Grid.Column="1" Text="Random" HorizontalAlignment="Left" Margin="148.4,191,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Name="CBII9" Content="9"/>
+            <ComboBoxItem Name="CBII11" Content="11"/>
+            <ComboBoxItem Name="CBII13" Content="13"/>
+            <ComboBoxItem Name="CBII15" Content="15"/>
+            <ComboBoxItem Name="CBII17" Content="17"/>
+            <ComboBoxItem Name="CBII19" Content="19"/>
+        </ComboBox>
+        <Button Grid.Column="1" Content="Create new crossword" HorizontalAlignment="Left" Margin="100,260,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Button_Click_Generate_Advanced_Crossword"/>
+        <Button Content="Load crossword" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="100.4,336,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5" Click="Button_Click_Load_Advanced_Crossword"/>
+        <Label FontSize="32" Content="Search for password" Grid.Column="1" HorizontalAlignment="Left" Margin="52,400,0,0" VerticalAlignment="Top"/>
+        <Label Content="Clue:" Grid.Column="1" HorizontalAlignment="Left" Margin="72.4,470,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TBSearch" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="71.4,510,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="253"/>
+        <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Margin="71.4,550,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Search_For_Password"/>
+        <TextBox Name="TBFound" Grid.Column="1" HorizontalAlignment="Left" Height="69" Margin="72.4,590,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252" />
+        
     </Grid>
 </Window>
