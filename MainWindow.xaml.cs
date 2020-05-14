@@ -23,19 +23,30 @@ namespace GeneratorKrzyzowek
     /// </summary>
     public partial class MainWindow : Window
     {
-        /// list of texbox where crossword password will be written
+        /// list of lists texbox where crossword password will be written
         public List<List<TextBox>> TBlist = new List<List<TextBox>>();
+        /// list with all passwords
         public List<String> passwordList = new List<string>();
+        /// list with labels each label will be before first letter of password
         public List<Label> labels = new List<Label>();
+        /// main password (has gray background)
         public string password = "";
+        /// new window where crossword will be created
         public Window1 Window1 { get; set; }
+        /// this property is used to store information about crossword with across and down passwords
         public AcrossAndDownCrossword Crossword{get;set;}
  
+        ///constructor 
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// this function generate crossword with across passwords and one down password on gray background.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Generate_Simple_Crossword(object sender, RoutedEventArgs e)
         {
             TBlist.Clear();
@@ -99,7 +110,11 @@ namespace GeneratorKrzyzowek
             }
             Window1.Show();
         }
-
+        /// <summary>
+        /// this function generate crossword with across and down passwords
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Generate_Advanced_Crossword(object sender, RoutedEventArgs e)
         {
             TBlist.Clear();
@@ -148,7 +163,11 @@ namespace GeneratorKrzyzowek
             }
             Window1.Show();
         }
-
+        /// <summary>
+        /// this function load crossword with across passwords and one down password on gray background.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Load_Simple_Crossword(object sender, RoutedEventArgs e)
         {
             TBlist.Clear();
@@ -237,6 +256,11 @@ namespace GeneratorKrzyzowek
             }
         }
 
+        /// <summary>
+        /// this function load crossword with across and down passwords
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Load_Advanced_Crossword(object sender, RoutedEventArgs e)
         {
             TBlist.Clear();
@@ -346,7 +370,11 @@ namespace GeneratorKrzyzowek
                 Window1.Show();
             }
         }
-
+        /// <summary>
+        /// this function try to add new password,clue to database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Add_Password(object sender, RoutedEventArgs e)
         {
             string str=TBPassword.Text;
@@ -369,7 +397,11 @@ namespace GeneratorKrzyzowek
                 MessageBox.Show("Password is too long");
             }
         }
-
+        /// <summary>
+        /// this function try to delete password,clue from database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Delete_Password(object sender, RoutedEventArgs e)
         {
             string str = TBPassword.Text;
@@ -392,7 +424,11 @@ namespace GeneratorKrzyzowek
                 MessageBox.Show("Pasword is too long");
             }
         }
-
+        /// <summary>
+        /// this function check if something is written in textbox
+        /// </summary>
+        /// <param name="TBPassword">text in textbox whit only letters</param>
+        /// <returns> true if text empty else returns false</returns>
         public bool If_TB_Is_Empty(string TBPassword) {
             if (TBPassword == "")
             {
@@ -407,6 +443,11 @@ namespace GeneratorKrzyzowek
             return false;
         }
 
+        /// <summary>
+        /// this function search for password with clue that someone write and resoults are display into textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Search_For_Password(object sender, RoutedEventArgs e)
         {
             TBFound.Text = "";
@@ -505,6 +546,11 @@ namespace GeneratorKrzyzowek
             }
         }
 
+        /// <summary>
+        /// choose password from database
+        /// </summary>
+        /// <param name="x"> lenght of password</param>
+        /// <returns> one password with lenght x</returns>
         private string ChoosePassword(int x)
         {
             String vs = "";
@@ -628,6 +674,12 @@ namespace GeneratorKrzyzowek
             return vs;
         }
 
+        /// <summary>
+        /// choose password from database
+        /// </summary>
+        /// <param name="x">lenght of password</param>
+        /// <param name="password">one letter which choosen password must contain</param>
+        /// <returns>one password with lenght x and contains letter password</returns>
         private string ChoosePasswordContains(int x, string password)
         {
             string vs = "";
@@ -803,6 +855,11 @@ namespace GeneratorKrzyzowek
             return vs;
         }
 
+        /// <summary>
+        /// this function add password to database
+        /// </summary>
+        /// <param name="str">password </param>
+        /// <param name="len">lenght of password</param>
         public void AddPasswordToDatabase(string str, int len)
         {
             if (len == 3)
@@ -831,6 +888,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla3s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -863,6 +921,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla4s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -895,6 +954,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla5s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -927,6 +987,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla6s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -959,6 +1020,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla7s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -991,6 +1053,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla8s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1023,6 +1086,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla9s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1055,6 +1119,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla10s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1087,6 +1152,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla11s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1119,6 +1185,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla12s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1151,6 +1218,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla13s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1183,6 +1251,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla14s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1215,6 +1284,7 @@ namespace GeneratorKrzyzowek
                     }
                     context.Hasla15s.Add(obj);
                     context.SaveChanges();
+                    MessageBox.Show("Password added successfully");
                 }
                 else
                 {
@@ -1223,6 +1293,11 @@ namespace GeneratorKrzyzowek
             }
         }
 
+        /// <summary>
+        /// this function delete passwrod from database
+        /// </summary>
+        /// <param name="str">password </param>
+        /// <param name="len">lenght of password</param>
         public void DeletePasswordFromdatabase(string str, int len)
         {
             KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
@@ -1251,6 +1326,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla3s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1282,6 +1358,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla4s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1313,6 +1390,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla5s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1344,6 +1422,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla6s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1375,6 +1454,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla7s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1406,6 +1486,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla8s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1437,6 +1518,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla9s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1468,6 +1550,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla10s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1499,6 +1582,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla11s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1530,6 +1614,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla12s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1561,6 +1646,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla13s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1592,6 +1678,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla14s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {
@@ -1623,6 +1710,7 @@ namespace GeneratorKrzyzowek
                         context.Hasla15s.Remove(record);
                     }
                     context.SaveChanges();
+                    MessageBox.Show("Password deleted successfully");
                 }
                 else
                 {

@@ -22,18 +22,59 @@ namespace GeneratorKrzyzowek
     /// </summary>
     public partial class Window1 : Window
     {
+        /// <summary>
+        ///  list of lists texbox where crossword password will be written
+        /// </summary>
         public List<List<TextBox>> TexBoxList { get; set; }
+        /// <summary>
+        /// list with all passwords
+        /// </summary>
         public List<String> PasswordList { get; set; }
+        /// <summary>
+        /// list with all clues
+        /// </summary>
         public List<List<string>> Cluelist { get; set; } = new List<List<string>>();
+        /// <summary>
+        /// property where combobox items will be add 
+        /// </summary>
         public ObservableCollection<ComboBoxItem> CbItems { get; set; }
+        /// <summary>
+        /// property which has selected item in combobox
+        /// </summary>
         public ComboBoxItem SelectedcbItem { get; set; }
+        /// <summary>
+        /// list of password you tried enter
+        /// </summary>
         public List<string> ListPasswordYouTriedEnter { get; set; }
+        /// <summary>
+        /// property to track ClueList
+        /// </summary>
         public TrackClueList TrackClueList { get; set; }
+        /// <summary>
+        /// list of list with starts co-ordinates of password
+        /// </summary>
         public List<List<int>> StartXYList { get; set; }
+        /// <summary>
+        /// list of list with ends co-ordinates of password
+        /// </summary>
         public List<List<int>> EndXYList { get; set; }
+        /// <summary>
+        /// main password (has gray background)
+        /// </summary>
         public string Password { get; set; } = " ";
+        /// <summary>
+        /// array where crossword is stored
+        /// </summary>
         public string[,] Board { get; set; }
 
+        /// <summary>
+        /// constructor set CbItems, ListPasswordYouTriedEnter
+        /// </summary>
+        /// <param name="passwordList">set PasswordList</param>
+        /// <param name="tblist">set TBList</param>
+        /// <param name="startxylist">set StsrtXYList can be null for crossword in only across passwords</param>
+        /// <param name="endxylist">set EndXYList can be null for crossword in only across passwords</param>
+        /// <param name="trackcluelist">set TrackClueList can be null for crossword in only across passwords</param>
         public Window1(List<String> passwordList, List<List<TextBox>> tblist, List<List<int>> startxylist = null, List<List<int>> endxylist = null,TrackClueList trackcluelist = null)
         {
 #if DEBUG
@@ -135,6 +176,11 @@ namespace GeneratorKrzyzowek
             }
         }
 
+        /// <summary>
+        /// this function try to enter password written in textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Try_Enter_Password(object sender, RoutedEventArgs e)
         {
             int i = CB.SelectedIndex;
@@ -196,6 +242,11 @@ namespace GeneratorKrzyzowek
             }
         }
 
+        /// <summary>
+        /// this function change clue of current password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Change_Clue(object sender, RoutedEventArgs e)
         {
             int j = CB.SelectedIndex;
@@ -219,11 +270,21 @@ namespace GeneratorKrzyzowek
             ListBoxWithClues.Items[j] = textBox;
         }
 
+        /// <summary>
+        /// change current password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBoxOfPasswordYouTriedEnter.Text = ListPasswordYouTriedEnter[CB.SelectedIndex];
         }
 
+        /// <summary>
+        /// save crossword to text file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Save(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -274,6 +335,12 @@ namespace GeneratorKrzyzowek
             }
         }
 
+        /// <summary>
+        /// this function get all clue for password 
+        /// </summary>
+        /// <param name="x">password lenght</param>
+        /// <param name="record">password</param>
+        /// <returns>list of clue for password</returns>
         private List<string> SubClueList(int x, string record)
         {
             var subcluelist = new List<string>();

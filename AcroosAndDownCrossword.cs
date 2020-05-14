@@ -6,29 +6,51 @@ using System.Data.Entity;
 
 namespace GeneratorKrzyzowek
 {
+    /// <summary>
+    /// class where crossword with across and down passwords is generated
+    /// </summary>
     public class AcrossAndDownCrossword
     {
+        /// <summary>
+        /// list with all passwords
+        /// </summary>
         public List<string> PasswordList {
             get { return passwordlist;}
             set{ }
         }
-        
+
+        /// <summary>
+        /// list of list with starts co-ordinates of password
+        /// </summary>
         public List <List<int>> ListStartXY {
             get{return liststartxy;}
             set { }
         }
+        /// <summary>
+        /// list of list with ends co-ordinates of password
+        /// </summary>
         public List<List<int>> ListEndXY
         {
             get{return listendxy;}
             set { }
         }
+        /// <summary>
+        /// array where crossword is stored
+        /// </summary>
         public string[,] Board { get; set; }
 
         List<string> passwordlist = new List<String>();
         List<List<int>> liststartxy = new List<List<int>>();
         List<List<int>> listendxy = new List<List<int>>();
 
-        public  int IsAcrossOk(int i, int j, string[,] board)
+        /// <summary>
+        /// this function check if this field of board is good to place password across
+        /// </summary>
+        /// <param name="i">first index</param>
+        /// <param name="j">second index</param>
+        /// <param name="board">array where crossword is stored</param>
+        /// <returns>0-this field is not good; 1-this field is good</returns>
+        public int IsAcrossOk(int i, int j, string[,] board)
         {
             if (j > 0)
             {
@@ -54,7 +76,14 @@ namespace GeneratorKrzyzowek
             return 1;
         }
 
-        public  int IsDownOk(int i, int j, string[,] board)
+        /// <summary>
+        /// this function check if this field of board is good to place password down
+        /// </summary>
+        /// <param name="i">first index</param>
+        /// <param name="j">second index</param>
+        /// <param name="board">array where crossword is stored</param>
+        /// <returns> -1-this field is not good; 0-this field is can't be last; 1-this field is good</returns>
+        public int IsDownOk(int i, int j, string[,] board)
         {
             if (board[i, j] == "_")
             {
@@ -83,6 +112,11 @@ namespace GeneratorKrzyzowek
             return 1;
         }
 
+        /// <summary>
+        /// this function generate crossword with across and down passwords
+        /// </summary>
+        /// <param name="size">size of board</param>
+        /// <returns>board</returns>
         public string[,] GetAcroossAndDownCrossword(int size)
         {            
             var lenlist = new List<int>();
@@ -270,7 +304,13 @@ namespace GeneratorKrzyzowek
             return board;
         }
 
-        public  string GetPassword(int x, string slowo)
+        /// <summary>
+        /// this function get password that can be placed on board
+        /// </summary>
+        /// <param name="x">lenght</param>
+        /// <param name="slowo">letters which password must contain</param>
+        /// <returns>one password which met requirements if no password is found then return empty string</returns>
+        public string GetPassword(int x, string slowo)
         {
             if (x == 3)
             {
