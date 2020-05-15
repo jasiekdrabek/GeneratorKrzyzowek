@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GeneratorKrzyzowek.Window1">
-    <Position X="6.25" Y="2" Width="1.75" />
+    <Position X="8" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>QIDAAIEAAAAgAAAIAgIAAAAAABAAAAACAAAAACAIQAA=</HashCode>
       <FileName>Window1.xaml.cs</FileName>
@@ -12,9 +12,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GeneratorKrzyzowek.MainWindow">
-    <Position X="3.75" Y="2" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAABAIACAAABAAAEEAAAAAEAAQAgCAAAA=</HashCode>
+      <HashCode>AAQAEAAAAAAAQBAIACAAIBBAAEEAAABAEAAQAhCAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -24,16 +24,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GeneratorKrzyzowek.TrackClueList">
-    <Position X="9.25" Y="2" Width="1.5" />
+    <Position X="8.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAA=</HashCode>
       <FileName>TrackClueList.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GeneratorKrzyzowek.AcrossAndDownCrossword">
-    <Position X="1" Y="1.5" Width="1.5" />
+  <Class Name="GeneratorKrzyzowek.AcroosAndDownCrossword">
+    <Position X="4.25" Y="5.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAwAAAAAAAAEABEAAAAAAAAAAGCABEA=</HashCode>
+      <HashCode>AIAAAAAAAAAAAAwAAAAAAAAEAAEAAAAAAAAAAGCABEA=</HashCode>
       <FileName>AcroosAndDownCrossword.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -34,7 +34,7 @@ namespace GeneratorKrzyzowek
         /// new window where crossword will be created
         public Window1 Window1 { get; set; }
         /// this property is used to store information about crossword with across and down passwords
-        public AcrossAndDownCrossword Crossword{get;set;}
+        public AcroosAndDownCrossword Crossword{get;set;}
  
         ///constructor 
         public MainWindow()
@@ -124,7 +124,7 @@ namespace GeneratorKrzyzowek
             Crossword = null;
             var t = new TrackClueList();
             int x = t.GetPasswordLenght(CBII.Text);
-            Crossword = new AcrossAndDownCrossword
+            Crossword = new AcroosAndDownCrossword
             {
                 PasswordList = new List<string>(),
                 Board = new string[x, x]
@@ -274,7 +274,7 @@ namespace GeneratorKrzyzowek
                 Index = new List<int>()
             };
             string[] lines;
-            Crossword = new AcrossAndDownCrossword
+            Crossword = new AcroosAndDownCrossword
             {
                 PasswordList = new List<string>()
             };
@@ -429,7 +429,7 @@ namespace GeneratorKrzyzowek
         /// </summary>
         /// <param name="TBPassword">text in textbox whit only letters</param>
         /// <returns> true if text empty else returns false</returns>
-        public bool If_TB_Is_Empty(string TBPassword) {
+        bool If_TB_Is_Empty(string TBPassword) {
             if (TBPassword == "")
             {
                 MessageBox.Show("Password can't be empty");
@@ -860,7 +860,7 @@ namespace GeneratorKrzyzowek
         /// </summary>
         /// <param name="str">password </param>
         /// <param name="len">lenght of password</param>
-        public void AddPasswordToDatabase(string str, int len)
+        void AddPasswordToDatabase(string str, int len)
         {
             if (len == 3)
             {
@@ -1298,7 +1298,7 @@ namespace GeneratorKrzyzowek
         /// </summary>
         /// <param name="str">password </param>
         /// <param name="len">lenght of password</param>
-        public void DeletePasswordFromdatabase(string str, int len)
+        void DeletePasswordFromdatabase(string str, int len)
         {
             KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
             if (len == 3)

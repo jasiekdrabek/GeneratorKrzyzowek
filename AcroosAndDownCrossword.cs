@@ -9,7 +9,7 @@ namespace GeneratorKrzyzowek
     /// <summary>
     /// class where crossword with across and down passwords is generated
     /// </summary>
-    public class AcrossAndDownCrossword
+    public class AcroosAndDownCrossword
     {
         /// <summary>
         /// list with all passwords
@@ -50,7 +50,7 @@ namespace GeneratorKrzyzowek
         /// <param name="j">second index</param>
         /// <param name="board">array where crossword is stored</param>
         /// <returns>0-this field is not good; 1-this field is good</returns>
-        public int IsAcrossOk(int i, int j, string[,] board)
+        int IsAcrossOk(int i, int j, string[,] board)
         {
             if (j > 0)
             {
@@ -83,7 +83,7 @@ namespace GeneratorKrzyzowek
         /// <param name="j">second index</param>
         /// <param name="board">array where crossword is stored</param>
         /// <returns> -1-this field is not good; 0-this field is can't be last; 1-this field is good</returns>
-        public int IsDownOk(int i, int j, string[,] board)
+        int IsDownOk(int i, int j, string[,] board)
         {
             if (board[i, j] == "_")
             {
@@ -110,6 +110,26 @@ namespace GeneratorKrzyzowek
                 }
             }
             return 1;
+        }
+
+        /// <summary>
+        /// this function check if this field can be first letter of down password 
+        /// </summary>
+        /// <param name="i">first index</param>
+        /// <param name="j">second index</param>
+        /// <param name="board">array where crossword is stored</param>
+        /// <returns> true if this field can be first letter else return false</returns>
+        bool FirstDown(int i, int j, string[,] board)
+        {
+            if (i > 0)
+            {
+                if (board[i - 1, j] == "_")
+                {
+                    return true;
+                }
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -213,6 +233,20 @@ namespace GeneratorKrzyzowek
             {
                 int boardlen = board.GetLength(1);
                 lenlist.Clear();
+                if(!FirstDown(b1, b2, board))
+                {
+                    if (b1 > board.GetLength(0) - 1)
+                    {
+                        b1 = -1;
+                        b2 = b2 + 1;
+                    }
+                    b1 += 1;
+                    if (b2 > board.GetLength(1) - 1)
+                    {
+                        break;
+                    }
+                    continue;
+                }
                 for (int i = 0; i < boardlen - b1; i++)
                 {
                     if (IsDownOk(b1 + i, b2, board) == 1)
@@ -310,7 +344,7 @@ namespace GeneratorKrzyzowek
         /// <param name="x">lenght</param>
         /// <param name="slowo">letters which password must contain</param>
         /// <returns>one password which met requirements if no password is found then return empty string</returns>
-        public string GetPassword(int x, string slowo)
+        string GetPassword(int x, string slowo)
         {
             if (x == 3)
             {
