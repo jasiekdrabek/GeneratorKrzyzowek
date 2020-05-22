@@ -346,159 +346,185 @@ namespace GeneratorKrzyzowek
             var subcluelist = new List<string>();
             if (x == 3)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla3s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla3s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 4)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla4s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla4s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 5)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla5s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla5s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 6)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla6s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla6s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 7)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla7s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla7s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 8)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla8s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla8s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 9)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla9s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla9s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 10)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla10s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla10s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 11)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla11s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla11s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 12)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla12s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla12s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 13)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla13s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla13s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 14)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla14s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla14s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 15)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var query = from st in context.Hasla15s
-                            where st.haslo == record
-                            select st;
-                foreach (var record1 in query)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    subcluelist.Add(record1.podpowiedz);
+                    var query = from st in context.Hasla15s
+                                where st.haslo == record
+                                select st;
+                    foreach (var record1 in query)
+                    {
+                        subcluelist.Add(record1.podpowiedz);
+                    }
+                    return subcluelist;
                 }
-                return subcluelist;
             }
             if (x == 1)
             {

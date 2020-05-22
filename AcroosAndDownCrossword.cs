@@ -66,13 +66,13 @@ namespace GeneratorKrzyzowek
                     return 0;
                 }
             }
-            if (i <= board.GetLength(0) - 2)
+            /*if (i <= board.GetLength(0) - 2)
             {
                 if (board[i + 1, j] != "_")
                 {
                     return 0;
                 }
-            }
+            }*/
             return 1;
         }
 
@@ -349,215 +349,238 @@ namespace GeneratorKrzyzowek
             if (x == 3)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla3Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla3Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 4)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla4Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla4Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo,slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 5)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla5Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla5Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 6)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla6Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla6Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 7)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla7Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla7Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 8)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla8Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla8Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 9)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla9Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla9Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 10)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla10Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla10Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 11)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla11Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla11Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 12)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla12Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla12Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 13)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla13Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla13Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 14)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla14Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla14Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
             if (x == 15)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla15Distincts
-                         orderby st.ID
-                         where DbFunctions.Like(st.haslo, slowo)
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    return "";
+                    var a = (from st in context.Hasla15Distincts
+                             orderby st.ID
+                             where DbFunctions.Like(st.haslo, slowo)
+                             select st);
+                    if (a.Count() == 0)
+                    {
+                        return "";
+                    }
+                    int toSkip = rand.Next(0, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    return b.haslo;
                 }
-                int toSkip = rand.Next(0, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                return b.haslo;
             }
-            else
-            {
-                return "";
-            }
+            return "";
         }
     }
 }

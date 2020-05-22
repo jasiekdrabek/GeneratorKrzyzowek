@@ -37,5 +37,194 @@
       <FileName>AcroosAndDownCrossword.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="KrzyzowkiTabele.Hasla3">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla3Distinct">
+    <Position X="18" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla4">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla4Distinct">
+    <Position X="19.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla5">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla5Distinct">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla6">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla6.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla6Distinct">
+    <Position X="14.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla6.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla7">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla7.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla7Distinct">
+    <Position X="16.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla7.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla8">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla8.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla8Distinct">
+    <Position X="18" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla8.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla9">
+    <Position X="14.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla9.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla9Distinct">
+    <Position X="19.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla9.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla10">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla10.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla10Distinct">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla10.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla11">
+    <Position X="18" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla11.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla11Distinct">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla11.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla12">
+    <Position X="19.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla12.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla12Distinct">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla12.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla13">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla13.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla13Distinct">
+    <Position X="16.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla13.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla14">
+    <Position X="14.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla14.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla14Distinct">
+    <Position X="18" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla14.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla15">
+    <Position X="16.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla15.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.Hasla15Distinct">
+    <Position X="19.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Hasla15.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KrzyzowkiTabele.MyContext">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hwggAAAAEAAAAAgAAAAAAAAAEAAAAAABAACAAAAAQOA=</HashCode>
+      <FileName>MyContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

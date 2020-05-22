@@ -8,13 +8,15 @@
         Title="Window1" Height="500" Width="800">
     <Grid Name="grid" Background="Black" >
 
-        <ListBox Name="ListBoxWithClues"  Background="Black"  HorizontalAlignment="Left" Height="199" Margin="591,0,0,0" VerticalAlignment="Top" Width="201" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox Name="ListBoxOfPasswordYouTriedEnter" TextWrapping="Wrap" IsReadOnly="True" Text="" HorizontalAlignment="Left" Height="63" Margin="597,214,0,0" VerticalAlignment="Top" Width="187"/>
-        <ComboBox Name="CB" Text="" ItemsSource="{Binding CbItems}" SelectedItem="{Binding SelectedcbItem}" Margin="597,291,148.6,145.4" SelectionChanged="ComboBox_SelectionChanged"/>
-        <TextBox Name="TBToEnterPassword" HorizontalAlignment="Left" Height="33" Margin="650,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Change clue" HorizontalAlignment="Left" Margin="650,342,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Change_Clue"/>
-        <Button Content="Try enter password" HorizontalAlignment="Left" Margin="650,375,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_Try_Enter_Password"/>
-        <Button Content="Save crossword" HorizontalAlignment="Left" Margin="650,414,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click_Save"/>
+        <ListBox Name="ListBoxWithClues"  Background="Black"  HorizontalAlignment="Left" Height="175" Margin="591,0,0,0" VerticalAlignment="Top" Width="201" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Name="ListBoxOfPasswordYouTriedEnter" TextWrapping="Wrap" IsReadOnly="True" Text="" HorizontalAlignment="Left" Height="63" Margin="597,214,0,0" VerticalAlignment="Top" Width="173"/>
+        <ComboBox Name="CB" Text="" ItemsSource="{Binding CbItems}" SelectedItem="{Binding SelectedcbItem}" Margin="597,320,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged" Width="36" Height="33"/>
+        <TextBox Name="TBToEnterPassword" HorizontalAlignment="Left" Height="33" Margin="638,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
+        <Button Content="Change clue" HorizontalAlignment="Left" Margin="650,400,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_Change_Clue"/>
+        <Button Content="Try enter password" HorizontalAlignment="Left" Margin="650,370,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_Try_Enter_Password"/>
+        <Button Content="Save crossword" HorizontalAlignment="Left" Margin="650,430,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_Save"/>
+        <Label Background="White" Content="Type your answer here:" HorizontalAlignment="Left" Margin="638,289,0,0" VerticalAlignment="Top"/>
+        <Label Background="White" Content="Wrong answers:" HorizontalAlignment="Left" Margin="597,180,0,0" VerticalAlignment="Top" Width="93"/>
 
     </Grid>
 </Window>

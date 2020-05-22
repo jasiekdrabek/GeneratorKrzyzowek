@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -452,97 +453,99 @@ namespace GeneratorKrzyzowek
         {
             TBFound.Text = "";
             string clue = TBSearch.Text;
-            KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-            var a3 = (from st in context.Hasla3s
-                     where st.podpowiedz == clue 
-                     select st.haslo);
-            foreach(var haslo in a3)
+            using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
             {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a4 = (from st in context.Hasla4s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a4)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a5 = (from st in context.Hasla5s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a5)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a6 = (from st in context.Hasla6s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a6)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a7 = (from st in context.Hasla7s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a7)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a8 = (from st in context.Hasla8s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a8)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a9 = (from st in context.Hasla9s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a9)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a10 = (from st in context.Hasla10s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a10)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a11= (from st in context.Hasla11s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a11)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a12 = (from st in context.Hasla12s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a12)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a13 = (from st in context.Hasla13s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a13)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a14 = (from st in context.Hasla14s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a14)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
-            }
-            var a15 = (from st in context.Hasla15s
-                     where st.podpowiedz == clue
-                     select st.haslo);
-            foreach (var haslo in a15)
-            {
-                TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                var a3 = (from st in context.Hasla3s
+                          where DbFunctions.Like(st.podpowiedz,clue)
+                          select st.haslo);
+                foreach (var haslo in a3)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a4 = (from st in context.Hasla4s
+                          where DbFunctions.Like(st.podpowiedz, clue)
+                          select st.haslo);
+                foreach (var haslo in a4)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a5 = (from st in context.Hasla5s
+                          where DbFunctions.Like(st.podpowiedz, clue)
+                          select st.haslo);
+                foreach (var haslo in a5)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a6 = (from st in context.Hasla6s
+                          where DbFunctions.Like(st.podpowiedz, clue)
+                          select st.haslo);
+                foreach (var haslo in a6)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a7 = (from st in context.Hasla7s
+                          where DbFunctions.Like(st.podpowiedz, clue)
+                          select st.haslo);
+                foreach (var haslo in a7)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a8 = (from st in context.Hasla8s
+                          where DbFunctions.Like(st.podpowiedz, clue)
+                          select st.haslo);
+                foreach (var haslo in a8)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a9 = (from st in context.Hasla9s
+                          where DbFunctions.Like(st.podpowiedz, clue)
+                          select st.haslo);
+                foreach (var haslo in a9)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a10 = (from st in context.Hasla10s
+                           where DbFunctions.Like(st.podpowiedz, clue)
+                           select st.haslo);
+                foreach (var haslo in a10)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a11 = (from st in context.Hasla11s
+                           where DbFunctions.Like(st.podpowiedz, clue)
+                           select st.haslo);
+                foreach (var haslo in a11)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a12 = (from st in context.Hasla12s
+                           where DbFunctions.Like(st.podpowiedz, clue)
+                           select st.haslo);
+                foreach (var haslo in a12)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a13 = (from st in context.Hasla13s
+                           where DbFunctions.Like(st.podpowiedz, clue)
+                           select st.haslo);
+                foreach (var haslo in a13)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a14 = (from st in context.Hasla14s
+                           where DbFunctions.Like(st.podpowiedz, clue)
+                           select st.haslo);
+                foreach (var haslo in a14)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
+                var a15 = (from st in context.Hasla15s
+                           where DbFunctions.Like(st.podpowiedz, clue)
+                           select st.haslo);
+                foreach (var haslo in a15)
+                {
+                    TBFound.Text = TBFound.Text + haslo + Environment.NewLine;
+                }
             }
         }
 
@@ -557,119 +560,145 @@ namespace GeneratorKrzyzowek
             if (x == 3)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla3Distincts.Count());
-                KrzyzowkiTabele.Hasla3Distinct a = context.Hasla3Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla3Distincts.Count());
+                    KrzyzowkiTabele.Hasla3Distinct a = context.Hasla3Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 4)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla4Distincts.Count());
-                KrzyzowkiTabele.Hasla4Distinct a = context.Hasla4Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla4Distincts.Count());
+                    KrzyzowkiTabele.Hasla4Distinct a = context.Hasla4Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 5)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla5Distincts.Count());
-                KrzyzowkiTabele.Hasla5Distinct a = context.Hasla5Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla5Distincts.Count());
+                    KrzyzowkiTabele.Hasla5Distinct a = context.Hasla5Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 6)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla6Distincts.Count());
-                KrzyzowkiTabele.Hasla6Distinct a = context.Hasla6Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla6Distincts.Count());
+                    KrzyzowkiTabele.Hasla6Distinct a = context.Hasla6Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 7)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla7Distincts.Count());
-                KrzyzowkiTabele.Hasla7Distinct a = context.Hasla7Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla7Distincts.Count());
+                    KrzyzowkiTabele.Hasla7Distinct a = context.Hasla7Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 8)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla8Distincts.Count());
-                KrzyzowkiTabele.Hasla8Distinct a = context.Hasla8Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla8Distincts.Count());
+                    KrzyzowkiTabele.Hasla8Distinct a = context.Hasla8Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 9)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla9Distincts.Count());
-                KrzyzowkiTabele.Hasla9Distinct a = context.Hasla9Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla9Distincts.Count());
+                    KrzyzowkiTabele.Hasla9Distinct a = context.Hasla9Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 10)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla10Distincts.Count());
-                KrzyzowkiTabele.Hasla10Distinct a = context.Hasla10Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla10Distincts.Count());
+                    KrzyzowkiTabele.Hasla10Distinct a = context.Hasla10Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 11)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla11Distincts.Count());
-                KrzyzowkiTabele.Hasla11Distinct a = context.Hasla11Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla11Distincts.Count());
+                    KrzyzowkiTabele.Hasla11Distinct a = context.Hasla11Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 12)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla12Distincts.Count());
-                KrzyzowkiTabele.Hasla12Distinct a = context.Hasla12Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla12Distincts.Count());
+                    KrzyzowkiTabele.Hasla12Distinct a = context.Hasla12Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 13)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla13Distincts.Count());
-                KrzyzowkiTabele.Hasla13Distinct a = context.Hasla13Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla13Distincts.Count());
+                    KrzyzowkiTabele.Hasla13Distinct a = context.Hasla13Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 14)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla14Distincts.Count());
-                KrzyzowkiTabele.Hasla14Distinct a = context.Hasla14Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla14Distincts.Count());
+                    KrzyzowkiTabele.Hasla14Distinct a = context.Hasla14Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             if (x == 15)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                int toSkip = rand.Next(1, context.Hasla15Distincts.Count());
-                KrzyzowkiTabele.Hasla15Distinct a = context.Hasla15Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
-                vs = a.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    int toSkip = rand.Next(1, context.Hasla15Distincts.Count());
+                    KrzyzowkiTabele.Hasla15Distinct a = context.Hasla15Distincts.OrderBy(obj => obj.ID).Skip(toSkip).Take(1).First();
+                    vs = a.haslo;
+                    return vs;
+                }
             }
             return vs;
         }
@@ -686,171 +715,197 @@ namespace GeneratorKrzyzowek
             if (x == 3)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla3Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla3Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 4)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla4Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla4Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 5)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla5Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla5Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 6)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla6Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla6Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 7)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla7Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla7Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 8)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla8Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla8Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 9)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla9Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla9Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 10)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla10Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla10Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 11)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla11Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla11Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 12)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla12Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla12Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 13)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla13Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla13Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 14)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla14Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla14Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             if (x == 15)
             {
                 Random rand = new Random();
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla15Distincts
-                         orderby st.ID
-                         where st.haslo.Contains(password)
-                         select st);
-                int toSkip = rand.Next(1, a.Count());
-                var b = a.Skip(toSkip).Take(1).First();
-                vs = b.haslo;
-                return vs;
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
+                {
+                    var a = (from st in context.Hasla15Distincts
+                             orderby st.ID
+                             where st.haslo.Contains(password)
+                             select st);
+                    int toSkip = rand.Next(1, a.Count());
+                    var b = a.Skip(toSkip).Take(1).First();
+                    vs = b.haslo;
+                    return vs;
+                }
             }
             return vs;
         }
@@ -864,431 +919,457 @@ namespace GeneratorKrzyzowek
         {
             if (len == 3)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla3s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla3
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla3Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla3s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla3Distinct
+                        var obj = new KrzyzowkiTabele.Hasla3
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla3Distincts.Add(obj1);
+                        var b = (from st in context.Hasla3Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla3Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla3Distincts.Add(obj1);
+                        }
+                        context.Hasla3s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla3s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 4)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla4s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla4
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla4Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla4s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla4Distinct
+                        var obj = new KrzyzowkiTabele.Hasla4
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla4Distincts.Add(obj1);
+                        var b = (from st in context.Hasla4Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla4Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla4Distincts.Add(obj1);
+                        }
+                        context.Hasla4s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla4s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 5)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla5s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla5
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla5Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla5s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla5Distinct
+                        var obj = new KrzyzowkiTabele.Hasla5
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla5Distincts.Add(obj1);
+                        var b = (from st in context.Hasla5Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla5Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla5Distincts.Add(obj1);
+                        }
+                        context.Hasla5s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla5s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 6)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla6s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla6
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla6Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla6s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla6Distinct
+                        var obj = new KrzyzowkiTabele.Hasla6
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla6Distincts.Add(obj1);
+                        var b = (from st in context.Hasla6Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla6Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla6Distincts.Add(obj1);
+                        }
+                        context.Hasla6s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla6s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 7)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla7s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla7
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla7Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla7s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla7Distinct
+                        var obj = new KrzyzowkiTabele.Hasla7
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla7Distincts.Add(obj1);
+                        var b = (from st in context.Hasla7Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla7Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla7Distincts.Add(obj1);
+                        }
+                        context.Hasla7s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla7s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 8)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla8s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla8
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla8Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla8s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla8Distinct
+                        var obj = new KrzyzowkiTabele.Hasla8
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla8Distincts.Add(obj1);
+                        var b = (from st in context.Hasla8Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla8Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla8Distincts.Add(obj1);
+                        }
+                        context.Hasla8s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla8s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 9)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla9s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla9
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla9Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla9s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla9Distinct
+                        var obj = new KrzyzowkiTabele.Hasla9
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla9Distincts.Add(obj1);
+                        var b = (from st in context.Hasla9Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla9Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla9Distincts.Add(obj1);
+                        }
+                        context.Hasla9s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla9s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 10)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla10s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla10
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla10Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla10s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla10Distinct
+                        var obj = new KrzyzowkiTabele.Hasla10
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla10Distincts.Add(obj1);
+                        var b = (from st in context.Hasla10Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla10Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla10Distincts.Add(obj1);
+                        }
+                        context.Hasla10s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla10s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 11)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla11s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla11
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla11Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla11s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla11Distinct
+                        var obj = new KrzyzowkiTabele.Hasla11
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla11Distincts.Add(obj1);
+                        var b = (from st in context.Hasla11Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla11Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla11Distincts.Add(obj1);
+                        }
+                        context.Hasla11s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla11s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 12)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla12s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla12
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla12Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla12s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla12Distinct
+                        var obj = new KrzyzowkiTabele.Hasla12
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla12Distincts.Add(obj1);
+                        var b = (from st in context.Hasla12Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla12Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla12Distincts.Add(obj1);
+                        }
+                        context.Hasla12s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla12s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 13)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla13s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla13
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla13Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla13s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla13Distinct
+                        var obj = new KrzyzowkiTabele.Hasla13
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla13Distincts.Add(obj1);
+                        var b = (from st in context.Hasla13Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla13Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla13Distincts.Add(obj1);
+                        }
+                        context.Hasla13s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla13s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 14)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla14s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla14
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla14Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla14s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla14Distinct
+                        var obj = new KrzyzowkiTabele.Hasla14
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla14Distincts.Add(obj1);
+                        var b = (from st in context.Hasla14Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla14Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla14Distincts.Add(obj1);
+                        }
+                        context.Hasla14s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla14s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
             if (len == 15)
             {
-                KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-                var a = (from st in context.Hasla15s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() == 0)
+                using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
                 {
-                    var obj = new KrzyzowkiTabele.Hasla15
-                    {
-                        haslo = str,
-                        podpowiedz = TBClue.Text
-                    };
-                    var b = (from st in context.Hasla15Distincts
-                             where st.haslo == str
+                    var a = (from st in context.Hasla15s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 0)
+                    if (a.Count() == 0)
                     {
-                        var obj1 = new KrzyzowkiTabele.Hasla15Distinct
+                        var obj = new KrzyzowkiTabele.Hasla15
                         {
-                            haslo = str
+                            haslo = str,
+                            podpowiedz = TBClue.Text
                         };
-                        context.Hasla15Distincts.Add(obj1);
+                        var b = (from st in context.Hasla15Distincts
+                                 where st.haslo == str
+                                 select st);
+                        if (b.Count() == 0)
+                        {
+                            var obj1 = new KrzyzowkiTabele.Hasla15Distinct
+                            {
+                                haslo = str
+                            };
+                            context.Hasla15Distincts.Add(obj1);
+                        }
+                        context.Hasla15s.Add(obj);
+                        context.SaveChanges();
+                        MessageBox.Show("Password added successfully");
                     }
-                    context.Hasla15s.Add(obj);
-                    context.SaveChanges();
-                    MessageBox.Show("Password added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are already in database");
+                    else
+                    {
+                        MessageBox.Show("This password and clue are already in database");
+                    }
                 }
             }
         }
@@ -1300,421 +1381,424 @@ namespace GeneratorKrzyzowek
         /// <param name="len">lenght of password</param>
         void DeletePasswordFromdatabase(string str, int len)
         {
-            KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext();
-            if (len == 3)
+            using (KrzyzowkiTabele.MyContext context = new KrzyzowkiTabele.MyContext())
             {
-                var a = (from st in context.Hasla3s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
+                if (len == 3)
                 {
-                    var b = (from st in context.Hasla3s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla3s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla3Distincts
+                        var b = (from st in context.Hasla3s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla3Distincts.Remove(record);
+                            var c = (from st in context.Hasla3Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla3Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla3s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla3s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+
+                if (len == 4)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 4)
-            {
-                var a = (from st in context.Hasla4s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla4s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla4s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla4Distincts
+                        var b = (from st in context.Hasla4s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla4Distincts.Remove(record);
+                            var c = (from st in context.Hasla4Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla4Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla4s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla4s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 5)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 5)
-            {
-                var a = (from st in context.Hasla5s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla5s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla5s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla5Distincts
+                        var b = (from st in context.Hasla5s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla5Distincts.Remove(record);
+                            var c = (from st in context.Hasla5Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla5Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla5s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla5s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 6)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 6)
-            {
-                var a = (from st in context.Hasla6s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla6s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla6s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla6Distincts
+                        var b = (from st in context.Hasla6s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla6Distincts.Remove(record);
+                            var c = (from st in context.Hasla6Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla6Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla6s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla6s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 7)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 7)
-            {
-                var a = (from st in context.Hasla7s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla7s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla7s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla7Distincts
+                        var b = (from st in context.Hasla7s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla7Distincts.Remove(record);
+                            var c = (from st in context.Hasla7Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla7Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla7s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
-                    { 
-                        context.Hasla7s.Remove(record);
-                    }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 8)
-            {
-                var a = (from st in context.Hasla8s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla8s
-                             where st.haslo == str
-                             select st);
-                    if (b.Count() == 1)
+                    else
                     {
-                        var c = (from st in context.Hasla8Distincts
+                        MessageBox.Show("This password and clue are not in database");
+                    }
+                }
+                if (len == 8)
+                {
+                    var a = (from st in context.Hasla8s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
+                             select st);
+                    if (a.Count() != 0)
+                    {
+                        var b = (from st in context.Hasla8s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla8Distincts.Remove(record);
+                            var c = (from st in context.Hasla8Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla8Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla8s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
-                    { 
-                        context.Hasla8s.Remove(record);
-                    }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 9)
-            {
-                var a = (from st in context.Hasla9s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla9s
-                             where st.haslo == str
-                             select st);
-                    if (b.Count() == 1)
+                    else
                     {
-                        var c = (from st in context.Hasla9Distincts
+                        MessageBox.Show("This password and clue are not in database");
+                    }
+                }
+                if (len == 9)
+                {
+                    var a = (from st in context.Hasla9s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
+                             select st);
+                    if (a.Count() != 0)
+                    {
+                        var b = (from st in context.Hasla9s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla9Distincts.Remove(record);
+                            var c = (from st in context.Hasla9Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla9Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla9s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla9s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 10)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 10)
-            {
-                var a = (from st in context.Hasla10s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla10s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla10s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla10Distincts
+                        var b = (from st in context.Hasla10s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla10Distincts.Remove(record);
+                            var c = (from st in context.Hasla10Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla10Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla10s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla10s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 11)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 11)
-            {
-                var a = (from st in context.Hasla11s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla11s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla11s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla11Distincts
+                        var b = (from st in context.Hasla11s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla11Distincts.Remove(record);
+                            var c = (from st in context.Hasla11Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla11Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla11s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla11s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 12)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 12)
-            {
-                var a = (from st in context.Hasla12s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla12s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla12s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla12Distincts
+                        var b = (from st in context.Hasla12s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla12Distincts.Remove(record);
+                            var c = (from st in context.Hasla12Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla12Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla12s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla12s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 13)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 13)
-            {
-                var a = (from st in context.Hasla13s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla13s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla13s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla13Distincts
+                        var b = (from st in context.Hasla13s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla13Distincts.Remove(record);
+                            var c = (from st in context.Hasla13Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla13Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla13s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla13s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 14)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 14)
-            {
-                var a = (from st in context.Hasla14s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla14s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla14s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla14Distincts
+                        var b = (from st in context.Hasla14s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla14Distincts.Remove(record);
+                            var c = (from st in context.Hasla14Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla14Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla14s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla14s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
                 }
-                else
+                if (len == 15)
                 {
-                    MessageBox.Show("This password and clue are not in database");
-                }
-            }
-            if (len == 15)
-            {
-                var a = (from st in context.Hasla15s
-                         where st.podpowiedz == TBClue.Text && st.haslo == str
-                         select st);
-                if (a.Count() != 0)
-                {
-                    var b = (from st in context.Hasla15s
-                             where st.haslo == str
+                    var a = (from st in context.Hasla15s
+                             where st.podpowiedz == TBClue.Text && st.haslo == str
                              select st);
-                    if (b.Count() == 1)
+                    if (a.Count() != 0)
                     {
-                        var c = (from st in context.Hasla15Distincts
+                        var b = (from st in context.Hasla15s
                                  where st.haslo == str
                                  select st);
-                        foreach (var record in c)
+                        if (b.Count() == 1)
                         {
-                            context.Hasla15Distincts.Remove(record);
+                            var c = (from st in context.Hasla15Distincts
+                                     where st.haslo == str
+                                     select st);
+                            foreach (var record in c)
+                            {
+                                context.Hasla15Distincts.Remove(record);
+                            }
                         }
+                        foreach (var record in a)
+                        {
+                            context.Hasla15s.Remove(record);
+                        }
+                        context.SaveChanges();
+                        MessageBox.Show("Password deleted successfully");
                     }
-                    foreach (var record in a)
+                    else
                     {
-                        context.Hasla15s.Remove(record);
+                        MessageBox.Show("This password and clue are not in database");
                     }
-                    context.SaveChanges();
-                    MessageBox.Show("Password deleted successfully");
-                }
-                else
-                {
-                    MessageBox.Show("This password and clue are not in database");
                 }
             }
         }
