@@ -20,7 +20,7 @@ namespace GeneratorKrzyzowek
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class CrosswordWindow : Window
     {
         /// <summary>
         ///  list of lists texbox where crossword password will be written
@@ -75,7 +75,7 @@ namespace GeneratorKrzyzowek
         /// <param name="startxylist">set StsrtXYList can be null for crossword in only across passwords</param>
         /// <param name="endxylist">set EndXYList can be null for crossword in only across passwords</param>
         /// <param name="trackcluelist">set TrackClueList can be null for crossword in only across passwords</param>
-        public Window1(List<String> passwordList, List<List<TextBox>> tblist, List<List<int>> startxylist = null, List<List<int>> endxylist = null,TrackClueList trackcluelist = null)
+        public CrosswordWindow(List<String> passwordList, List<List<TextBox>> tblist, List<List<int>> startxylist = null, List<List<int>> endxylist = null,TrackClueList trackcluelist = null)
         {
 #if DEBUG
             System.Diagnostics.PresentationTraceSources.DataBindingSource.Switch.Level = System.Diagnostics.SourceLevels.Critical;

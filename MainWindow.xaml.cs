@@ -33,7 +33,7 @@ namespace GeneratorKrzyzowek
         /// main password (has gray background)
         public string password = "";
         /// new window where crossword will be created
-        public Window1 Window1 { get; set; }
+        public CrosswordWindow Window1 { get; set; }
         /// this property is used to store information about crossword with across and down passwords
         public AcroosAndDownCrossword Crossword{get;set;}
  
@@ -56,7 +56,10 @@ namespace GeneratorKrzyzowek
             var t = new TrackClueList();
             int x = t.GetPasswordLenght(CBI.Text);
             password = ChoosePassword(x);
-            Window1 = null;
+            if (Window1 != null)
+            {
+                Window1.Close();
+            }
             int k = 1;
 
             for (int i = 0; i < x; i++)
@@ -94,7 +97,7 @@ namespace GeneratorKrzyzowek
                 k = k + 1;
                 TBlist.Add(textBoxes);
             }
-            Window1 = new Window1(passwordList, TBlist)
+            Window1 = new CrosswordWindow(passwordList, TBlist)
             {
                 Password = password
             };
@@ -121,7 +124,10 @@ namespace GeneratorKrzyzowek
             TBlist.Clear();
             passwordList.Clear();
             labels.Clear();
-            Window1 = null;
+            if (Window1 != null)
+            {
+                Window1.Close();
+            }
             Crossword = null;
             var t = new TrackClueList();
             int x = t.GetPasswordLenght(CBII.Text);
@@ -151,7 +157,7 @@ namespace GeneratorKrzyzowek
                 }   
                 TBlist.Add(textBoxes);
             }
-            Window1 = new Window1(Crossword.PasswordList, TBlist, Crossword.ListStartXY, Crossword.ListEndXY)
+            Window1 = new CrosswordWindow(Crossword.PasswordList, TBlist, Crossword.ListStartXY, Crossword.ListEndXY)
             {
                 Board = Crossword.Board
             };
@@ -174,7 +180,10 @@ namespace GeneratorKrzyzowek
             TBlist.Clear();
             passwordList.Clear();
             labels.Clear();
-            Window1 = null;
+            if (Window1 != null)
+            {
+                Window1.Close();
+            }
             string[] lines;
             var t = new TrackClueList
             {
@@ -238,7 +247,7 @@ namespace GeneratorKrzyzowek
                     k = k + 1;
                     TBlist.Add(textBoxes);
                 }
-                Window1 = new Window1(passwordList, TBlist,null,null,t)
+                Window1 = new CrosswordWindow(passwordList, TBlist,null,null,t)
                 {
                     Password = password
                 };
@@ -267,7 +276,10 @@ namespace GeneratorKrzyzowek
             TBlist.Clear();
             passwordList.Clear();
             labels.Clear();
-            Window1 = null;
+            if (Window1 != null)
+            {
+                Window1.Close();
+            }
             Crossword = null;
             var t = new TrackClueList
             {
@@ -357,7 +369,7 @@ namespace GeneratorKrzyzowek
                     }
                     TBlist.Add(textBoxes);
                 }
-                Window1 = new Window1(Crossword.PasswordList, TBlist, Crossword.ListStartXY, Crossword.ListEndXY,t)
+                Window1 = new CrosswordWindow(Crossword.PasswordList, TBlist, Crossword.ListStartXY, Crossword.ListEndXY,t)
                 {
                     Board = Crossword.Board
                 };
