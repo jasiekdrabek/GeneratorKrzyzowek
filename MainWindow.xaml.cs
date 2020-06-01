@@ -40,7 +40,10 @@ namespace GeneratorKrzyzowek
         ///constructor 
         public MainWindow()
         {
+            ChoosePassword(3);
             InitializeComponent();
+            Crossword = new AcroosAndDownCrossword();
+            Crossword.GetAcroossAndDownCrossword(3);
         }
 
         /// <summary>
